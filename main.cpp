@@ -3,17 +3,17 @@
 //----------------------------------------------------------
 
 //------------------------------
-//ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰
+//ƒCƒ“ƒNƒ‹[ƒh
 #include <stdio.h>
 #include "macro.h"
 #include "test_class.h"
 
 //------------------------------
-//ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
+//ƒOƒ[ƒoƒ‹•Ï”
 c_Test	*g_pStartTest;
 c_Test	*g_pRecycle;
 //------------------------------
-//ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—
+//ƒvƒƒgƒ^ƒCƒv
 void Init(void);
 void Unit(void);
 int Recycle(void);
@@ -36,7 +36,7 @@ void main(void)
 	}
 
 //----------------------------------
-//ä¸è¦ãªãƒ¡ãƒ³ãƒãƒ¼ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
+//•s—v‚Èƒƒ“ƒo[‚ğƒNƒŠƒA‚·‚é
 	int nCntRecycle = Recycle();
 
 	Unit();
@@ -45,7 +45,7 @@ void main(void)
 	getchar();
 }
 //--------------------------------------------------
-//åˆæœŸåŒ–å‡¦ç†
+//‰Šú‰»ˆ—
 void Init(void)
 {
 	g_pStartTest = new c_Test;
@@ -56,10 +56,10 @@ void Init(void)
 	g_pRecycle->m_pNext = g_pRecycle->m_pPrev	= g_pRecycle;
 }
 //--------------------------------------------------
-//çµ‚äº†å‡¦ç†
+//I—¹ˆ—
 void Unit(void)
 {
-	//æ®‹ã£ãŸã‚‚ã®ã‚’ã™ã¹ã¦ãƒªã‚µã‚¤ã‚¯ãƒ«ãƒªã‚¹ãƒˆã®ä¸­ã«å…¥ã‚Œã‚‹
+	//c‚Á‚½‚à‚Ì‚ğ‚·‚×‚ÄƒŠƒTƒCƒNƒ‹ƒŠƒXƒg‚Ì’†‚É“ü‚ê‚é
 	for(c_Test* ActiveTest = g_pStartTest;
 		ActiveTest->m_pNext!= g_pStartTest;
 		ActiveTest	= ActiveTest->m_pNext)
@@ -67,12 +67,12 @@ void Unit(void)
 		ActiveTest->MoveOut(g_pStartTest,g_pRecycle);
 	}
 
-	//ãƒªã‚µã‚¤ã‚¯ãƒ«ã‚’ä¸€å›å®Ÿè¡Œ
+	//ƒŠƒTƒCƒNƒ‹‚ğˆê‰ñÀs
 	int nCntRes = 0;
 	nCntRes = Recycle();
 
 
-	//å®‰å…¨é–‹æ”¾
+	//ˆÀ‘SŠJ•ú
 	if(g_pStartTest)
 	{
 		g_pStartTest->CleanArray();
